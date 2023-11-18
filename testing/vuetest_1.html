@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue.js data binding test1</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js data binding test1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
+
 <body>
 
-<div id="app">
-  <p>{{ msg }}</p>
-  <input v-model="msg">
-</div>
-<div id="apps">
-    <p>{{ msgs }}</p>
-    <input v-model="msgs">
-  </div>
-  
-<script src="vuetestjs.js"></script>
 
+
+
+
+
+    <div id="app1">
+        <p>{{ msg1 }}</p>
+        <input v-model="msg1">
+        </br>
+
+        <span v-bind:title="message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+        </span>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+
+
+    </div>
+
+
+
+    <div id="app2">
+        <p>{{ msg2 }}</p>
+        <input v-model="msg2">
+        </br>
+        <button v-on:click="hide">toggle it</button>
+        <span v-if="bool">its visible</span>
+
+
+
+    </div>
+
+
+    <div id="app3">
+        <input type="text" v-model="input" placeholder="Search cities" />
+        <div class="item city" v-for="city in filteredList" v-if="input != 0" :key="city">
+            <p>{{ city }}</p>
+        </div>
+        <div class="item error" v-if="input && filteredList.length == 0">
+            <p>No results found!</p>
+        </div>
+    </div>
+
+
+    <script src="vuetestjs.js"></script>
+
+    </script>
 </body>
+
 </html>
