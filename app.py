@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hiiiiiiiiiii</p>"
+def index():
+    msg1 = "hiiiii"
+    msg2 = "byeeee"
+    return render_template('index.html', msg1 = msg1, msg2 = msg2)

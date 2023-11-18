@@ -24,10 +24,9 @@
             Hover your mouse over me for a few seconds
             to see my dynamically bound title!
         </span>
-        <li v-for="todo in todos">
-            {{ todo.text }}
-        </li>
-
+    
+  
+     
 
     </div>
 
@@ -56,7 +55,7 @@
     </div>
 
 
-    <script src="vuetestjs.js"></script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
 
     </script>
 </body>

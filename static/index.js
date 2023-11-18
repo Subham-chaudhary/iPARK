@@ -5,12 +5,7 @@ new Vue({
     data: {
         msg1: 'hello',
         message: 'You loaded this page on ' + new Date().toLocaleString(),
-        todos: [
-            { text: 'Learn JavaScript' },
-            { text: 'Learn Vue' },
-            { text: 'Build something awesome' }
-        ]
-
+       
     }
 
 
