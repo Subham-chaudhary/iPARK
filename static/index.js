@@ -8,7 +8,7 @@ new Vue({
         message: 'You loaded this page on ' + new Date().toLocaleString(),
        
     },
-    template:  ' <div>{{msd}}</br><p>{{msg1}}</p><input v-model="msg1"> </br><span v-bind:title="message">Hover your mouse over me for a few seconds to see my dynamically bound title!</span></div>'
+    template:  ' <div class="styledApp">{{msd}}</br><p>{{msg1}}</p><input v-model="msg1"> </br><span v-bind:title="message">Hover your mouse over me for a few seconds to see my dynamically bound title!</span></div>'
     
 
 
@@ -51,6 +51,6 @@ new Vue({
             }
         },
     },
-    template: '<div><p>{{input ? "input": "no input"}}</p><input type="text" v-model="input" placeholder="Search cities" /><div class="item city" v-for="city in filteredList" v-if="input" :key="city"> <p>{{ city }}</p></div><div class="item error" v-if="input && filteredList.length == 0"><p>No results found!</p></div></div>'
+    template: '<div class="styledApp"><p>{{input ? "input": "no input"}}</p><input type="text" v-model="input" placeholder="Search cities" /><div class="itemcity" v-for="city in filteredList" v-if="input" :key="city"> <p>{{ city }}</p></div><div class="itemerror" v-if="input && filteredList.length == 0"><p>No results found!</p></div></div>'
     
 });

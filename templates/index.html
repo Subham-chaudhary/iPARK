@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js data binding test1</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 
@@ -27,7 +28,7 @@
     </script>
 
 
-    <div id="app2">
+    <div id="app2" class="styledApp">
         <p>Type anything here, your message will be forwarded to next page.</p>
         <form action="{{ url_for('shubh') }}" method="get">
             <input type="text" name="msg2" placeholder="Type something" required>
@@ -44,7 +45,7 @@
 
     
 
-    <div id="app3">
+    <div id="app3" >
         
     </div>
 
