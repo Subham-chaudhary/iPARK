@@ -16,20 +16,15 @@
 
 
     <div id="app1">
-        <p>{{ msg1 }}</p>
-        <input v-model="msg1">
-        </br>
-
-        <span v-bind:title="message">
-            Hover your mouse over me for a few seconds
-            to see my dynamically bound title!
-        </span>
-    
+        
+    </div>
   
      
 
-    </div>
-
+  
+<script> var cityData = {{ city|safe }};
+    // Parse the JSON string into a JavaScript object
+    </script>
 
 
     <div id="app2">
@@ -43,15 +38,14 @@
 
     </div>
 
+    
+
+   
+
+    
 
     <div id="app3">
-        <input type="text" v-model="input" placeholder="Search cities" />
-        <div class="item city" v-for="city in filteredList" v-if="input != 0" :key="city">
-            <p>{{ city }}</p>
-        </div>
-        <div class="item error" v-if="input && filteredList.length == 0">
-            <p>No results found!</p>
-        </div>
+        
     </div>
 
 

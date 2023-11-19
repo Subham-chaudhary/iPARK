@@ -3,10 +3,13 @@
 new Vue({
     el: '#app1',
     data: {
-        msg1: 'hello',
+        msg1: '',
+        msd:cityData,
         message: 'You loaded this page on ' + new Date().toLocaleString(),
        
-    }
+    },
+    template:  ' <div>{{msd}}</br><p>{{msg1}}</p><input v-model="msg1"> </br><span v-bind:title="message">Hover your mouse over me for a few seconds to see my dynamically bound title!</span></div>'
+    
 
 
 });
@@ -31,36 +34,23 @@ new Vue({
     el: '#app3',
     data() {
         return {
-            input: "",
-            city: [],
+            input: '',
+            city: cityData,
+            
+            
         };
     },
     computed: {
         filteredList() {
-            return this.city.filter((city) =>
-                city.toLowerCase().includes(this.input.toLowerCase())
-            );
-        },
-    },
-
-    created() {
-        // Fetch the online json
-        this.fetchCities();
-
-    },
-    methods: {
-
-        async fetchCities() {
-            try {
-
-                const apiUrl = 'https://json.extendsclass.com/bin/ca7c6cea8359'; //json file api hosting
-                const response = await fetch(apiUrl);
-                // const data = await response.json();
-                this.city = await response.json();
-                // console.log(this.city);
-            } catch (error) {
-                console.error('Error fetching cities:', error);
+            if (this.city && this.city.length > 0) {
+                return this.city.filter((cityData) =>
+                    cityData.toLowerCase().includes(this.input.toLowerCase())
+                );
+            } else {
+                return [];
             }
         },
     },
+    template: '<div><p>{{input ? "input": "no input"}}</p><input type="text" v-model="input" placeholder="Search cities" /><div class="item city" v-for="city in filteredList" v-if="input" :key="city"> <p>{{ city }}</p></div><div class="item error" v-if="input && filteredList.length == 0"><p>No results found!</p></div></div>'
+    
 });
