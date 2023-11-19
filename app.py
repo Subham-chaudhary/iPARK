@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 import requests
 
 app = Flask(__name__)
@@ -21,6 +21,15 @@ def index():
     else:
         # Return an error message if the request failed
         return render_template('index.html', error_message="Failed to fetch JSON data")
+    
+
+@app.route("/shubh")
+def shubh():
+    
+    msg = request.args.get('msg2', '')
+    
+
+    return render_template('shubh.html', msg2=msg)
 
 
 if __name__ == "__main__":

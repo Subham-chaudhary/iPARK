@@ -28,14 +28,14 @@
 
 
     <div id="app2">
-        <p>{{ msg2 }}</p>
-        <input v-model="msg2">
-        </br>
+        <p>Type anything here, your message will be forwarded to next page.</p>
+        <form action="{{ url_for('shubh') }}" method="get">
+            <input type="text" name="msg2" placeholder="Type something" required>
+            <br>
+            <button type="submit">Go to shubh.html</button>
+        </form>
         <button v-on:click="hide">toggle it</button>
         <span v-if="bool">its visible</span>
-
-
-
     </div>
 
     
