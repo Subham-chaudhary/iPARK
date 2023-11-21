@@ -23,14 +23,20 @@ def index():
         return render_template('index.html', error_message="Failed to fetch JSON data")
     
 
-@app.route("/shubh")
-def shubh():
+@app.route("/mapv1")
+def mapv1():
+    
+    
+    
+
+    return render_template('Map1.html')
+
+@app.route("/test")
+def test():
     
     msg = request.args.get('msg2', '')
-    
 
-    return render_template('shubh.html', msg2=msg)
-
+    return render_template('test.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
