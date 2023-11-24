@@ -10,10 +10,115 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
         data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+
+        }
+    </style>
+
+
+
 </head>
 
 <body>
-   
+    <script> var city_data = {{ city|safe }}</script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='map1.css') }}">
+
+    <div class="main-container">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='map1.css') }}">
+
+        <div class="floating-container">
+            <div class="home-header">
+                <header data-thq="thq-navbar" class="home-navbar-interactive">
+                    <img class="home-logo" src="{{ url_for('static', filename='ipark_logo.png') }}" alt="iPARK Logo">
+                    <div data-thq="thq-navbar-nav" class="home-desktop-menu">
+                        <div class="home-buttons">
+                            <button class="home-login button">Login</button>
+                            <button class="home-login button">Register</button>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div id="sidebars"></div>
+            <!-- <div class="sidebar-container">
+                 <div class="sidebar1">
+                    <input type="text" required="" autofocus="" placeholder="Search here" autocomplete="address-line1"
+                        class="textinput input" />
+                    <ul class="search-list">
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshd</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshdkhskfhkdsfhdshfkd</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshdkhskfhkdsfhdshfkdshfkdsjhfksd</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BB</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshdkhskfhkdsfhdshfkdshfkdsjhfksdj</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshdkhskfhkdsfhdshfkdshfkdsjhfksdj</span>
+                            <br>
+                            Mumbai
+                        </li>
+                        <li class="search-item">
+                            <span class="search-result" onclick="handleClick('Value 1')">BBSkshdkhskfhkdsfhdshfkdshfkdsjhfksdj</span>
+                            <br>
+                            Mumbai
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="sidebar2">
+                    <ul class="option-list">
+                        <li class="option-item">
+                            <span class="option-result">ITER,BBS</span>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </div> -->
+        <div class="bg-map">
+            <div id="map">
+            </div>
+        </div>
+        <div class="home-footer">
+            <footer class="footer">iPark is a parking website where you can find best parking on web and each parking
+                space is Safe and Secure.</footer>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='map1.js')}}"></script>
+
 </body>
 
 </html>

@@ -13,12 +13,6 @@
 </head>
 
 <body>
-
-
-
-
-
-
     <div id="app1">
         
     </div>
@@ -26,7 +20,7 @@
      
 
   
-<script> var cityData = {{ city|safe }};
+<script> var cityData = {{ city.city|safe }};
     // Parse the JSON string into a JavaScript object
     </script>
 
@@ -55,7 +49,7 @@
 
     <script src="{{url_for('static', filename='index.js')}}"></script>
 
-    </script>
+    
 </body>
 
 </html>
